@@ -43,5 +43,7 @@ jobs:
           # execute commands on ssh
           script: |
             cd ~/admin.andy-blum.com
+            git fetch
+            git pull
             composer install
             drush status
