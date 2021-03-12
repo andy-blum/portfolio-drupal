@@ -1,0 +1,23 @@
+uuid: 118b330e-2cbe-4e1a-9b4a-be75b43ec3fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_people_website
+    - node.type.people
+  module:
+    - link
+id: node.people.field_people_website
+field_name: field_people_website
+entity_type: node
+bundle: people
+label: Website
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 2
+field_type: link

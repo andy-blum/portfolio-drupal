@@ -1,0 +1,10 @@
+uuid: bbc1638f-9780-4a55-aad3-6725679d56cc
+langcode: en
+status: true
+dependencies:
+  module:
+    - gatsby_fastbuilds
+id: gatsby_log_entity.token
+label: Token
+targetEntityType: gatsby_log_entity
+cache: true

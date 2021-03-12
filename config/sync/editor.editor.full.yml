@@ -1,0 +1,102 @@
+uuid: f7a1258d-0bd9-4ff8-bb56-603ff944a77b
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.full
+  module:
+    - ckeditor
+format: full
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: Formatting
+          items:
+            - Bold
+            - Underline
+            - Strike
+            - Italic
+            - RemoveFormat
+        -
+          name: Layout
+          items:
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyRight
+            - JustifyBlock
+            - '-'
+            - Outdent
+            - Indent
+            - '-'
+            - Table
+        -
+          name: Links
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: Media
+          items:
+            - Blockquote
+            - DrupalImage
+            - CodeSnippet
+        -
+          name: Tools
+          items:
+            - Source
+            - ShowBlocks
+            - Maximize
+        -
+          name: Options
+          items:
+            - Format
+            - Styles
+  plugins:
+    stylescombo:
+      styles: ''
+    language:
+      language_list: un
+    codesnippet:
+      highlight_style: monokai
+      highlight_languages:
+        apache: apache
+        bash: bash
+        css: css
+        diff: diff
+        html: html
+        http: http
+        javascript: javascript
+        json: json
+        markdown: markdown
+        php: php
+        sql: sql
+        xml: xml
+        cs: 0
+        cpp: 0
+        coffeescript: 0
+        ini: 0
+        java: 0
+        makefile: 0
+        nginx: 0
+        objectivec: 0
+        perl: 0
+        python: 0
+        ruby: 0
+        vbscript: 0
+        xhtml: 0
+image_upload:
+  status: false
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

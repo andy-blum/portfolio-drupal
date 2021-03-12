@@ -1,0 +1,21 @@
+uuid: 5b0eef6c-a598-4143-a156-88884dcfe39f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.feed.field_view
+    - paragraphs.paragraphs_type.feed
+id: paragraph.feed.default
+targetEntityType: paragraph
+bundle: feed
+mode: default
+content:
+  field_view:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+hidden:
+  created: true
+  status: true

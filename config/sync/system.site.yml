@@ -1,0 +1,14 @@
+uuid: fc7083d7-63fa-4256-9712-ba3a70e191a4
+name: Site-Install
+mail: admin@example.com
+slogan: ''
+page:
+  403: /user/login
+  404: ''
+  front: /admin/content-planner/dashboard
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI

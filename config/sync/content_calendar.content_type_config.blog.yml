@@ -1,0 +1,7 @@
+uuid: 2d7eef48-592e-479d-acc2-6043ffb46068
+langcode: en
+status: true
+dependencies: {  }
+id: blog
+label: Blog
+color: '#0074bd'

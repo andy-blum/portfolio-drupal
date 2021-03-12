@@ -1,0 +1,10 @@
+uuid: 94b41e1d-eca0-4281-a2a0-88ad3ba9f78d
+langcode: en
+status: true
+dependencies: {  }
+id: feed
+label: Feed
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

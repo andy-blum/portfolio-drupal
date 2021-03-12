@@ -1,0 +1,33 @@
+uuid: 4593ecf2-5b35-43f9-accd-01d8128cc70d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.people.field_people_website
+    - node.type.people
+  module:
+    - link
+    - user
+id: node.people.default
+targetEntityType: node
+bundle: people
+mode: default
+content:
+  field_people_website:
+    weight: 102
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }
