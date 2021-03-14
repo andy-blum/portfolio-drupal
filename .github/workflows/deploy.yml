@@ -23,26 +23,15 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: ssh-pipeline
-        # You may pin to the exact commit or the version.
-        # uses: cross-the-world/ssh-pipeline@7f022867934a210af826af99ef80d96f03a094d5
-        uses: cross-the-world/ssh-pipeline@v1.2.0
+      - name: SSH Commands
+        uses: appleboy/ssh-action@master
         with:
-          # ssh remote host
           host: ${{ secrets.ADMIN_IP }}
-          # ssh remote port
+          username: ${{ secrets.ADMIN_USERNAME }}
+          password: ${{ secrets.ADMIN_PASS }}
           port: ${{ secrets.ADMIN_PORT }}
-          # ssh remote user
-          user: ${{ secrets.ADMIN_USERNAME }}
-          # content of ssh private key. ex raw content of ~/.ssh/id_rsa
-          # key: # optional
-          # ssh remote password
-          pass: ${{ secrets.ADMIN_PASS }}
-          # connection timeout to remote host
-          # connect_timeout: # optional, default is 30s
-          # execute commands on ssh
           script: |
             cd ~/admin.andy-blum.com
-            git fetch
-            git pull
-            ../drupal-deploy.sh
+            which composer
+            $(which composer) -v
+            composer -v
