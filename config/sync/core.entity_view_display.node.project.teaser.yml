@@ -1,18 +1,18 @@
-uuid: 85afec8b-7b6c-4ea5-b34c-9ca88e9836ff
+uuid: 16912351-f561-457d-9a1a-83d04e3faf42
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.blog.body
-    - field.field.node.blog.field_image
-    - node.type.blog
+    - field.field.node.project.body
+    - field.field.node.project.field_link_to_project
+    - node.type.project
   module:
     - text
     - user
-id: node.blog.teaser
+id: node.project.teaser
 targetEntityType: node
-bundle: blog
+bundle: project
 mode: teaser
 content:
   body:
@@ -23,15 +23,10 @@ content:
       trim_length: 600
     third_party_settings: {  }
     region: content
-  content_moderation_control:
-    weight: -20
-    settings: {  }
-    third_party_settings: {  }
-    region: content
   links:
     weight: 100
     settings: {  }
     third_party_settings: {  }
     region: content
 hidden:
-  field_image: true
+  field_link_to_project: true

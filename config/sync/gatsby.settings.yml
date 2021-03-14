@@ -4,7 +4,7 @@ iframe:
   blog: 0
 target:
   blog: window
-server_url: 'http://localhost:8000'
+server_url: 'https://andyblumcom.gatsbyjs.io/'
 incrementalbuild_url: ''
 build_published: 1
 preview_entity_types:

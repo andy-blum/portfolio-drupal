@@ -1,18 +1,18 @@
-uuid: e9d4b411-7062-4726-9a5d-d1b1b25a14a1
+uuid: 39594267-4367-4303-957a-f4a036ee4447
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.blog.body
-    - field.field.node.blog.field_image
-    - node.type.blog
+    - field.field.node.project.body
+    - field.field.node.project.field_link_to_project
+    - node.type.project
   module:
-    - file
+    - link
     - text
     - user
-id: node.blog.default
+id: node.project.default
 targetEntityType: node
-bundle: blog
+bundle: project
 mode: default
 content:
   body:
@@ -22,18 +22,17 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-  content_moderation_control:
-    weight: -20
-    settings: {  }
-    third_party_settings: {  }
-    region: content
-  field_image:
+  field_link_to_project:
     weight: 102
     label: above
     settings:
-      use_description_as_link_text: true
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
     third_party_settings: {  }
-    type: file_default
+    type: link
     region: content
   links:
     weight: 100

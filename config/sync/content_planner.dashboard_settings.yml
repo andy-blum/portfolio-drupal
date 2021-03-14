@@ -1,26 +1,10 @@
 blocks:
-  content_state_statistic:
-    plugin_id: content_state_statistic
-    title: Workflow
+  custom_html_block_1:
+    plugin_id: custom_html_block_1
+    title: 'Create New Content'
     weight: '0'
     configured: true
     plugin_specific_config:
-      workflow_id: editorial
-  custom_html_block_1:
-    plugin_id: custom_html_block_1
-    title: null
-    weight: 0
-    configured: false
-    plugin_specific_config: {  }
-  user_block:
-    plugin_id: user_block
-    title: null
-    weight: 0
-    configured: false
-    plugin_specific_config: {  }
-  view_1_block:
-    plugin_id: view_1_block
-    title: null
-    weight: 0
-    configured: false
-    plugin_specific_config: {  }
+      content:
+        value: "<ul>\r\n\t<li><a href=\"/node/add/blog\">Create New Blog Post</a></li>\r\n</ul>\r\n"
+        format: full

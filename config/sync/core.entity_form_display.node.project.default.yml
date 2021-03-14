@@ -1,21 +1,20 @@
-uuid: 27628efc-d386-48d8-b873-8d199494e268
+uuid: 93d043eb-9e1a-49d9-92f8-b81a4e165fc4
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.blog.body
-    - field.field.node.blog.field_image
-    - node.type.blog
-    - workflows.workflow.editorial
+    - field.field.node.project.body
+    - field.field.node.project.field_link_to_project
+    - node.type.project
   module:
     - content_moderation
-    - file
+    - link
     - path
     - scheduler
     - text
-id: node.blog.default
+id: node.project.default
 targetEntityType: node
-bundle: blog
+bundle: project
 mode: default
 content:
   body:
@@ -34,12 +33,13 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_image:
+  field_link_to_project:
     weight: 122
     settings:
-      progress_indicator: throbber
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
-    type: file_generic
+    type: link_default
     region: content
   moderation_state:
     type: moderation_state_default

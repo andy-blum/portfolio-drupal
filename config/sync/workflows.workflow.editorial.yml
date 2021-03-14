@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - node.type.blog
+    - node.type.project
   module:
     - content_moderation
 id: editorial
@@ -15,28 +16,63 @@ type_settings:
       label: Draft
       published: false
       default_revision: false
-      weight: 0
+      weight: -2
     published:
       label: Published
       published: true
       default_revision: true
-      weight: 1
-  transitions:
-    create_new_draft:
-      label: 'Create New Draft'
-      to: draft
       weight: 0
+    staged:
+      published: false
+      default_revision: false
+      label: Staged
+      weight: -1
+  transitions:
+    back_to_draft:
+      label: 'Back To Draft'
+      from:
+        - published
+        - staged
+      to: draft
+      weight: -2
+    continuing_draft:
+      label: 'Continuing Draft'
       from:
         - draft
+      to: draft
+      weight: -4
+    continuing_published:
+      label: 'Continuing Published'
+      from:
         - published
-    publish:
-      label: Publish
       to: published
       weight: 1
+    continuing_staged:
+      label: 'Continuing Staged'
+      from:
+        - staged
+      to: staged
+      weight: -1
+    publication_re_scheduled:
+      label: 'Publication Re-Scheduled'
+      from:
+        - published
+      to: staged
+      weight: 2
+    published:
+      label: Published
+      from:
+        - staged
+      to: published
+      weight: 0
+    ready_to_publish:
+      label: 'Ready To Publish'
       from:
         - draft
-        - published
+      to: staged
+      weight: -3
   entity_types:
     node:
       - blog
+      - project
   default_moderation_state: draft

@@ -1,0 +1,31 @@
+uuid: 2bea37b8-05b7-44b5-aeb0-705fd38d9e22
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - scheduler
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: true
+    publish_past_date: publish
+    publish_past_date_created: false
+    publish_required: true
+    publish_revision: false
+    publish_touch: true
+    show_message_after_update: true
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: false
+name: Project
+type: project
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false
