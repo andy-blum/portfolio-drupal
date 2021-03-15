@@ -24,4 +24,4 @@ jobs:
           echo $PATH
           echo $HOME
           cd ~/admin.andy-blum.com
-          which composer
+          which drush
