@@ -1,49 +1,31 @@
-# This is a basic workflow to help you get started with Actions
-
-name: CI
-
-# Controls when the action will run.
+name: Deploy
 on:
-  # Triggers the workflow on push events but only for the main branch
+
+  # Runs on push to branch "main"
   push:
     branches: [ main ]
-
-  # Allows you to run this workflow manually from the Actions tab
+    
+  # Runs when manually triggered in "Actions" tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  deploy:
+    name: Deploy
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-
-      - name: ssh-pipeline
-        # You may pin to the exact commit or the version.
-        # uses: cross-the-world/ssh-pipeline@7f022867934a210af826af99ef80d96f03a094d5
-        uses: cross-the-world/ssh-pipeline@v1.2.0
-        with:
-          # ssh remote host
-          host: ${{ secrets.ADMIN_IP }}
-          # ssh remote port
-          port: ${{ secrets.ADMIN_PORT }}
-          # ssh remote user
-          user: ${{ secrets.ADMIN_USERNAME }}
-          # content of ssh private key. ex raw content of ~/.ssh/id_rsa
-          # key: # optional
-          # ssh remote password
-          pass: ${{ secrets.ADMIN_PASS }}
-          # connection timeout to remote host
-          # connect_timeout: # optional, default is 30s
-          # execute commands on ssh
-          script: |
-            cd ~/admin.andy-blum.com
-            git fetch
-            git pull
-            $(which composer) install
-            $(which drush) status
+    - name: SSH Commands
+      uses: cross-the-world/ssh-pipeline@master
+      with:
+        host: ${{ secrets.ADMIN_IP }}
+        user: ${{ secrets.ADMIN_USERNAME }}
+        pass: ${{ secrets.ADMIN_PASS }}
+        port: ${{ secrets.ADMIN_PORT }}
+        script: |
+          cd ~/admin.andy-blum.com
+          git fetch
+          git pull
+          ~/bin/composer install
+          ~/bin/drush cr
+          ~/bin/drush updb -y
+          ~/bin/drush cim -y
+          ~/bin/drush cr
