@@ -13,19 +13,11 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: executing remote ssh commands using password
-      uses: appleboy/ssh-action@master
+    - name: SSH Commands
+      uses: garygrossgarten/github-action-ssh@release
       with:
-        host: ${{ secrets.ADMIN_IP }}
-        username: ${{ secrets.ADMIN_USERNAME }}
-        password: ${{ secrets.ADMIN_PASS }}
-        port: ${{ secrets.ADMIN_PORT }}
-        script: |
-          pwd
-          whoami
-          echo $PATH
-          echo $HOME
-          git status
-          which git
-          which composer
-          which drush
+        command: pwd
+        host: ${{ secrets.HOST }}
+        username: garygrossgarten
+        passphrase: ${{ secrets.PASSPHRASE }}
+        privateKey: ${{ secrets.PRIVATE_KEY}}
