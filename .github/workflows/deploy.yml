@@ -14,10 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: SSH Commands
-      uses: garygrossgarten/github-action-ssh@release
+      uses: garygrossgarten/github-action-ssh@0.6.4
       with:
         command: pwd
-        host: ${{ secrets.HOST }}
-        username: garygrossgarten
-        passphrase: ${{ secrets.PASSPHRASE }}
-        privateKey: ${{ secrets.PRIVATE_KEY}}
+        host: ${{ secrets.ADMIN_IP }}
+        username: ${{ secrets.ADMIN_USERNAME }}
+        passphrase: ${{ secrets.ADMIN_PASS }}
+        port: ${{ secrets.ADMIN_PORT }}
