@@ -21,9 +21,7 @@ jobs:
         pass: ${{ secrets.ADMIN_PASS }}
         port: ${{ secrets.ADMIN_PORT }}
         script: |
-          pwd
-          whoami
-          git status
-          which git
+          echo $PATH
+          echo $HOME
+          cd ~/admin.andy-blum.com
           which composer
-          which drush
