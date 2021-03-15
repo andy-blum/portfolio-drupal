@@ -21,7 +21,5 @@ jobs:
         pass: ${{ secrets.ADMIN_PASS }}
         port: ${{ secrets.ADMIN_PORT }}
         script: |
-          echo $PATH
-          echo $HOME
           cd ~/admin.andy-blum.com
-          which drush
+          ~/bin/drush status
