@@ -24,5 +24,8 @@ jobs:
           cd ~/admin.andy-blum.com
           git fetch
           git pull
-          ~/bin/composer -v
-          ~/bin/drush status
+          ~/bin/composer install
+          ~/bin/drush cr
+          ~/bin/drush updb -y
+          ~/bin/drush cim -y
+          ~/bin/drush cr
