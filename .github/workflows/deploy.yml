@@ -22,4 +22,28 @@ jobs:
         port: ${{ secrets.ADMIN_PORT }}
         script: |
           cd ~/admin.andy-blum.com
-          ~/bin/drush status
+          echo "-----------------------"
+          echo "PULLING RECENT CHANGES"
+          echo "-----------------------"
+          git fetch
+          git pull
+          echo "-----------------------"
+          echo "INSTALLING DEPENDENCIES"
+          echo "-----------------------"
+          ~/bin/composer install
+          echo "-----------------------"
+          echo "CLEARING CACHE"
+          echo "-----------------------"
+          ~/bin/drush cr
+          echo "-----------------------"
+          echo "UPDATING DATABASE"
+          echo "-----------------------"
+          ~/bin/drush updb
+          echo "-----------------------"
+          echo "IMPORTING CONFIGURATION"
+          echo "-----------------------"
+          ~/bin/drush cim -y
+          echo "-----------------------"
+          echo "CLEARING CACHE"
+          echo "-----------------------"
+          ~/bin/drush cr
