@@ -5,9 +5,10 @@ dependencies:
   config:
     - field.field.node.blog.body
     - field.field.node.blog.field_image
+    - field.field.node.blog.field_image_attribution
     - node.type.blog
   module:
-    - file
+    - image
     - text
     - user
 id: node.blog.default
@@ -31,9 +32,17 @@ content:
     weight: 102
     label: above
     settings:
-      use_description_as_link_text: true
+      image_style: ''
+      image_link: ''
     third_party_settings: {  }
-    type: file_default
+    type: image
+    region: content
+  field_image_attribution:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
     region: content
   links:
     weight: 100

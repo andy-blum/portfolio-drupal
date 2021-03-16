@@ -130,23 +130,23 @@ resourceFields:
       id: ''
     disabled: false
   publish_on:
+    disabled: true
     fieldName: publish_on
     publicName: publish_on
     enhancer:
       id: ''
-    disabled: false
   unpublish_on:
+    disabled: true
     fieldName: unpublish_on
     publicName: unpublish_on
     enhancer:
       id: ''
-    disabled: false
   menu_link:
+    disabled: true
     fieldName: menu_link
     publicName: menu_link
     enhancer:
       id: ''
-    disabled: false
   body:
     fieldName: body
     publicName: body
@@ -156,6 +156,12 @@ resourceFields:
   field_image:
     fieldName: field_image
     publicName: field_image
+    enhancer:
+      id: ''
+    disabled: false
+  field_image_attribution:
+    fieldName: field_image_attribution
+    publicName: field_image_attribution
     enhancer:
       id: ''
     disabled: false

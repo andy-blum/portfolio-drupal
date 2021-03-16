@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.organizations.body
+    - field.field.node.organizations.field_logo
     - field.field.node.organizations.field_organization_website
     - node.type.organizations
   module:
@@ -29,4 +30,5 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_logo: true
   field_organization_website: true

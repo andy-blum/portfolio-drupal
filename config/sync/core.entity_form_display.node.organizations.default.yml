@@ -4,10 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.node.organizations.body
+    - field.field.node.organizations.field_logo
     - field.field.node.organizations.field_organization_website
+    - image.style.thumbnail
     - node.type.organizations
   module:
     - content_moderation
+    - image
     - link
     - path
     - scheduler
@@ -33,6 +36,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_logo:
+    weight: 123
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
   field_organization_website:
     weight: 122
     settings:
