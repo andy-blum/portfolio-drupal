@@ -6,7 +6,7 @@ target:
   blog: window
 server_url: 'https://andyblumcom.gatsbyjs.io/'
 incrementalbuild_url: 'https://webhook.gatsbyjs.com/hooks/data_source/publish/8e311699-3549-4f5f-b9e7-02ddcbeb4a39'
-build_published: 1
+build_published: true
 preview_entity_types:
   file: file
   media: media
@@ -14,10 +14,10 @@ preview_entity_types:
   path_alias: path_alias
   taxonomy_term: taxonomy_term
   paragraph: paragraph
-  content_kanban_log: 0
-  content_moderation_state: 0
-  menu_link_content: 0
-  user: 0
+  content_kanban_log: '0'
+  content_moderation_state: '0'
+  menu_link_content: '0'
+  user: '0'
 path_mapping: ''
 secret_key: ''
 legacy_preview_url: 0
